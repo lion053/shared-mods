@@ -1,0 +1,233 @@
+<!-- Milk from Cattle Farm v1.0 -->
+
+<ModOps>
+
+<!-- # Milk from Cattle Farm -->
+<Group>
+  <!-- Implementation of milk production via cattle farms without being dependent on electricity (and dlc12) -->
+  <!-- 1. Adjust cattle farm and cattle pasture properties -->
+  <ModOp Type="merge" GUID="1010263" Path="/Values/Maintenance/Maintenances/Item[Product='1010052']">
+    <Amount>25</Amount> <!-- vanilla value = 20 -->
+  </ModOp>
+  <ModOp Type="merge" GUID="1010263" Path="/Values/Object/Variations/Item/Filename">
+    <Filename>data\graphics\mod_buildings\lion_053\cattle_farm_ow\cattle_farm_ow.cfg</Filename>
+  </ModOp>
+  <ModOp Type="merge" GUID="1010263" Path="/Values/FactoryBase">
+    <ProductionOutputInfotip>2100118207</ProductionOutputInfotip>
+  </ModOp>
+  <ModOp Type="replace" GUID="1010271" Path="/Template">
+    <Template>FactoryModuleElectric</Template>
+  </ModOp>
+  <ModOp Type="merge" GUID="1010271" Path="/Values">
+    <Standard>
+      <InfoDescription>2100118209</InfoDescription>
+    </Standard>
+    <Building>
+      <BuildingType>Factory</BuildingType>
+    </Building>
+    <Selection>
+      <GUIType>Production</GUIType>
+      <UnlockSecondGUI>0</UnlockSecondGUI>
+    </Selection>
+    <FactoryBase>
+      <FactoryInputs>
+        <Item>
+          <Product>2100118203</Product> <!-- visible fake input needed for pasture icon instead of cultivation icon -->
+        </Item>
+      </FactoryInputs>
+      <FactoryOutputs>
+        <Item>
+          <Product>5385</Product>
+          <Amount>1</Amount>
+          <StorageAmount>1</StorageAmount>
+        </Item>
+      </FactoryOutputs>
+      <CycleTime>120</CycleTime>
+      <IsMainFactory>0</IsMainFactory>
+      <TeleportProducedGoodsIntoAreaStorage>1</TeleportProducedGoodsIntoAreaStorage>
+      <WarehouseTransporterAsset>0</WarehouseTransporterAsset>
+      <ClampedMaxTransporterLogisticCost>0.1</ClampedMaxTransporterLogisticCost>
+    </FactoryBase>
+    <LogisticNode>
+      <TransporterCountMax>0</TransporterCountMax>
+      <NeedsTransporterQueue>0</NeedsTransporterQueue>
+    </LogisticNode>
+    <Factory7>
+      <IsAgriculture>1</IsAgriculture>
+    </Factory7>
+    <BuildingModule>
+      <PlazaSize>20</PlazaSize>
+    </BuildingModule>
+    <AmbientMoodProvider>
+      <AmbientMood>AgricultureBuildingsEurope</AmbientMood>
+      <DynamicEnvironmentType>None</DynamicEnvironmentType>
+    </AmbientMoodProvider>
+    <Attackable>
+      <AttackableType>IslandBuilding</AttackableType>
+    </Attackable>
+    <Constructable>
+      <DestructionCategory>Production</DestructionCategory>
+    </Constructable>
+    <IncidentInfectable>
+      <Infectable>
+        <Fire>
+          <Base>0</Base>
+        </Fire>
+        <Riot>
+          <Base>0</Base>
+        </Riot>
+        <Illness>
+          <Base>0</Base>
+        </Illness>
+        <Explosion>
+          <Base>0</Base>
+        </Explosion>
+      </Infectable>
+    </IncidentInfectable>
+    <Pausable>
+      <CanPauseManually>1</CanPauseManually>
+    </Pausable>
+    <Warehouse /> <!-- to avoid missing warehouse icons above the pastures due to fake input -->
+    <Electrifiable>
+      <ElectricityBoost>0</ElectricityBoost>
+      <ElectrifiedEffect>0</ElectrifiedEffect>
+    </Electrifiable>
+    <Industrializable>
+      <MandatoryIndustrialization>0</MandatoryIndustrialization>
+      <BoostedByIndustrialization>0</BoostedByIndustrialization>
+    </Industrializable>
+  </ModOp>
+  <!-- 2. Adjust milk product -->
+  <ModOp Type="add" GUID="5385" Path="/Values/Product/AssociatedRegion" Condition="!/Values/Product[AssociatedRegion='Moderate']">;Moderate</ModOp> <!-- valid argument -->
+  <ModOp Type="add" GUID="5385" Path="/Values/Product/ProductionRegions" Condition="!/Values/Product/ProductionRegions[Item/RegionType='Moderate']">
+    <Item>
+      <RegionType>Moderate</RegionType>
+    </Item>
+  </ModOp>
+  <!-- 3. Add fake input -->
+  <ModOp Type="addNextSibling" GUID="5385">
+    <Asset>
+      <Template>Product</Template>
+      <Values>
+        <Standard>
+          <GUID>2100118203</GUID>
+          <Name>Cattle Pasture</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/icon_general_module_01.png</IconFilename>
+          <InfoDescription>8005</InfoDescription>
+        </Standard>
+        <Locked>
+          <DefaultLockedState>0</DefaultLockedState>
+        </Locked>
+        <Product>
+          <DeltaOnly>1</DeltaOnly>
+          <IsAbstract>1</IsAbstract>
+          <AssociatedRegion>Moderate</AssociatedRegion>
+        </Product>
+        <ExpeditionAttribute />
+      </Values>
+    </Asset>
+  </ModOp>
+</Group>
+
+<!-- # Unlock -->
+<Group>
+  <ModOp Type="addNextSibling" GUID="130248">
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>2100118218</GUID>
+          <Name>Unlock Pastures Sandbox</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionPlayerCounter</Template>
+            <Values>
+              <Condition />
+              <ConditionPlayerCounter>
+                <PlayerCounter>PopulationByLevel</PlayerCounter>
+                <Context>15000002</Context>
+                <CounterAmount>1</CounterAmount>
+              </ConditionPlayerCounter>
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnlockAssets>
+                      <Item>
+                        <Asset>5385</Asset>
+                      </Item>
+                      <Item>
+                        <Asset>1010271</Asset>
+                      </Item>
+                    </UnlockAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <ResetTrigger>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <EmptyAutoCreateValue />
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup />
+      </Values>
+    </Asset>
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>2100118239</GUID>
+          <Name>Unlock Pastures Creative Mode</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionIsCreativeMode</Template>
+            <Values>
+              <Condition />
+              <ConditionIsCreativeMode />
+              <ConditionPropsNegatable />
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnlockAssets>
+                      <Item>
+                        <Asset>5385</Asset>
+                      </Item>
+                      <Item>
+                        <Asset>1010271</Asset>
+                      </Item>
+                    </UnlockAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <ResetTrigger>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <EmptyAutoCreateValue />
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup />
+      </Values>
+    </Asset>
+  </ModOp>
+</Group>
+
+</ModOps>

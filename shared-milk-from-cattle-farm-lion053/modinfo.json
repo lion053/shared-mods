@@ -1,0 +1,54 @@
+{
+  "Version": "1.0",
+  "ModID": "shared-milk-from-cattle-farm-lion053",
+  "IncompatibleIds": [],
+  "ModDependencies": null,
+  "LoadAfterIds": null,
+
+  "Category": {
+    "Chinese": "Shared",
+    "English": "Shared",
+    "French": "Shared",
+    "German": "Shared",
+    "Italian": "Shared",
+    "Japanese": "Shared",
+    "Korean": "Shared",
+    "Polish": "Shared",
+    "Russian": "Shared",
+    "Spanish": "Shared",
+    "Taiwanese": "Shared"
+  },
+
+  "ModName": {
+    "Chinese": "Milk from Cattle Farm (Lion053)",
+    "English": "Milk from Cattle Farm (Lion053)",
+    "French": "Milk from Cattle Farm (Lion053)",
+    "German": "Milk from Cattle Farm (Lion053)",
+    "Italian": "Milk from Cattle Farm (Lion053)",
+    "Japanese": "Milk from Cattle Farm (Lion053)",
+    "Korean": "Milk from Cattle Farm (Lion053)",
+    "Polish": "Milk from Cattle Farm (Lion053)",
+    "Russian": "Milk from Cattle Farm (Lion053)",
+    "Spanish": "Milk from Cattle Farm (Lion053)",
+    "Taiwanese": "Milk from Cattle Farm (Lion053)"
+  },
+
+  "Description": {
+    "Chinese": "file::readme.md",
+    "English": "file::readme.md",
+    "French": "file::readme.md",
+    "German": "file::readme.md",
+    "Italian": "file::readme.md",
+    "Japanese": "file::readme.md",
+    "Korean": "file::readme.md",
+    "Polish": "file::readme.md",
+    "Russian": "file::readme.md",
+    "Spanish": "file::readme.md",
+    "Taiwanese": "file::readme.md"
+  },
+  "KnownIssues": null,
+  "DLCDependencies": null,
+  "CreatorName": "Lion053",
+  "CreatorContact": "https://discord.gg/ycmFNKaG",
+  "Image": null
+}

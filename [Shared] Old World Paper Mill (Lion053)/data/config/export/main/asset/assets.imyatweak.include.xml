@@ -1,0 +1,5 @@
+<ModOps>
+  <ModOp Path="/Values/FactoryUpgrade/AdditionalOutput/AdditionalOutputCycle" GUID="2100115093" Type="replace">
+    <AdditionalOutputCycle>3</AdditionalOutputCycle>
+  </ModOp>
+</ModOps>

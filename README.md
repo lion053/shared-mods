@@ -1,19 +1,33 @@
 # Shared-Mods
 
-Can be used as dependency / submod in your mod. To integrate them, download from the release section and put the mod into your mod at /data level. Add the `ModID` of the shared mod to  the `ModDependencies` in your `modinfo.json`. 
-Alternatively, if you use the "Build & Deploy" feature from the Visual Studio Code Anno Plugin, you can simply add the following dependencies to your `modinfo.json`: 
+Can be used as dependency / submod in your mod. 
 
-**Milk from Cattle Farm (Lion053)**
+Download from the release section and put the mod into your mod at `/data` level. Add the `ModID` of the shared mod to the `ModDependencies` in your `modinfo.json`.
+
+Alternatively, if you use the "Build & Deploy" feature from the Visual Studio Code Anno Plugin, you can add the urls shown below to your `ModDependencies` in your `modinfo.json`: 
+
+## Milk from Cattle Farm (Lion053)
+
+With this mod each cattle pasture module from the basegame cattle farm produces 1t of milk each cycle, independently of their ModuleOwner's productivity. Pasture production can be paused manually, their output is teleported into area storage. Cattle farm infotips are extended a bit to take this production into account. Unlock at 1 Artisan. 
+
+![Cattle Pasture](/sources/cattle_pasture.png)
+
+```json
 "ModDependencies": [
 
 ]
+```
 
-**Infotip Fix Tourist Buildings (Lion053)**
+## Infotip Fix Tourist Buildings (Lion053)
+
+This mod assigns the correct happiness-infotip to modded hotels, which otherwise show the normal residence infotip by default. It can be used for every new hotel, as long as they accommodate tourists with `GUID="601379"`. Includes the upgrade infotip for modded visitor piers as well.
+
+On the left side: wrong happiness-infotip for modded hotels; On the right side: correct happiness-infotip for modded hotels:
+
+![Happiness-Infotip](/sources/infotip_tourists.png)
+
+```json
 "ModDependencies": [
 
 ]
-
-**OW Paper Mill (Lion053)**
-"ModDependencies": [
-
-]
+```

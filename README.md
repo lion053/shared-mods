@@ -11,10 +11,9 @@ Alternatively, if you use the "Build & Deploy" feature from the Visual Studio Co
 With this mod each cattle pasture module from the basegame cattle farm produces 1t of milk each cycle, independently of their ModuleOwner's productivity. Pasture production can be paused manually, their output is teleported into area storage. Cattle farm infotips are extended a bit to take this production into account. Unlock at 1 Artisan. 
 
 ![Cattle Pasture](/sources/cattle_pasture.png)
-
 ```json
 "ModDependencies": [
-
+  "https://github.com/lion053/shared-mods/releases/download/v1.0/shared-milk-from-cattle-farm-lion053.zip"
 ]
 ```
 
@@ -28,6 +27,6 @@ On the left side: wrong happiness-infotip for modded hotels; On the right side: 
 
 ```json
 "ModDependencies": [
-
+  "https://github.com/lion053/shared-mods/releases/download/v1.0/shared-infotip-fix-tourist-buildings-lion053.zip"
 ]
 ```

@@ -439,5 +439,59 @@
       <BackgroundType />
     </InfoElement>
   </ModOp>
+  <ModOp Type="addNextSibling" Path ="//InfoTipData[Guid='25000020']/InfoElement/InfoElement/InfoElement/InfoElement[VisibilityElement/VisibilityElement/VisibilityElement/ExpectedValueInt='101269']"
+  Condition="!//InfoTipData[Guid='25000020']/InfoElement/InfoElement/InfoElement/InfoElement[VisibilityElement/VisibilityElement/VisibilityElement/ExpectedValueInt='101269' and (VisibilityElement/VisibilityElement[VisibilityElement/Condition='[GameSetup IsDLCActive(24963)]' and VisibilityElement/CompareOperator/CompareOperator='1'])]">
+    <InfoElement>
+      <ElementType>4</ElementType>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>3</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator />
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <ExpectedValueInt>101269</ExpectedValueInt> <!-- cattle farm nw -->
+            <Condition>[RefGuid]</Condition>
+          </VisibilityElement>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>1</CompareOperator>
+            </CompareOperator>
+            <ResultType />
+            <Condition>[GameSetup IsDLCActive(24963)]</Condition> <!-- if dlc-12 is not active -->
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <Icon>
+        <IconGUID>5385</IconGUID> <!-- milk -->
+        <Style />
+      </Icon>
+      <Text>
+        <TextGUID>2100118208</TextGUID> <!-- "Pastures provide milk " -->
+        <Style />
+      </Text>
+      <Value>
+        <Style />
+      </Value>
+      <WarningType />
+      <BackgroundType />
+    </InfoElement>
+  </ModOp>
 
 </ModOps>

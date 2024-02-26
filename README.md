@@ -8,7 +8,7 @@ Alternatively, if you use the "Build & Deploy" feature from the Visual Studio Co
 
 ## Milk from Cattle Farm (Lion053)
 
-With this mod each cattle pasture module from the basegame cattle farm produces 1t of milk each cycle, independently of their ModuleOwner's productivity. Pasture production can be paused manually, their output is teleported into area storage. Cattle farm infotips are extended a bit to take this production into account. Unlock at 1 Artisan. 
+With this mod each cattle pasture module from the basegame cattle farm produces 1t of milk per cycle, independently of their ModuleOwner's productivity. Pasture production can be paused manually, their output is teleported into area storage. Cattle farm infotips are extended a bit to take this production into account. Unlock at 1 Artisan. Without DLC-12, this mod affects the Old and New World cattle farm, with DLC-12 active, the New World remains untouched. Compatible with 'Cattle needs to be butchered' (Kurila) and 'Pescetarians' (Jakob). 
 
 ![Cattle Pasture](/sources/cattle_pasture.png)
 ```json

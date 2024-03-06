@@ -17,7 +17,7 @@ ModID: `shared-small-elevator-factory-lion053`
 ![Small_Elevator_Factory](/sources/small_elevator_factory.png)
 ```json
 "ModDependencies": [
-  "https://github.com/lion053/shared-mods/releases/download/v1.0/shared-milk-from-cattle-farm-lion053.zip"
+  "https://github.com/lion053/shared-mods/releases/download/v1.0/shared-small-elevator-factory-lion053.zip"
 ]
 ```
 

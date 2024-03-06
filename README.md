@@ -10,6 +10,8 @@ Alternatively, if you use the "Build & Deploy" feature from the Visual Studio Co
 
 With this mod each cattle pasture module from the basegame cattle farm produces 1t of milk per cycle, independently of their ModuleOwner's productivity. Pasture production can be paused manually, their output is teleported into area storage. Cattle farm infotips are extended a bit to take this production into account. Unlock at 1 Artisan. Without DLC-12, this mod affects the Old and New World cattle farm, with DLC-12 active, the New World remains untouched. Compatible with 'Cattle needs to be butchered' (Kurila) and 'Pescetarians' (Jakob). 
 
+ModID: `shared-milk-from-cattle-farm-lion053`
+
 ![Cattle Pasture](/sources/cattle_pasture.png)
 ```json
 "ModDependencies": [
@@ -22,6 +24,8 @@ With this mod each cattle pasture module from the basegame cattle farm produces 
 This mod assigns the correct happiness-infotip to modded hotels, which otherwise show the normal residence infotip by default. It can be used for every new hotel, as long as they accommodate tourists with `GUID="601379"`. Includes the upgrade infotip for modded visitor piers as well.
 
 On the left side: wrong happiness-infotip for modded hotels; On the right side: correct happiness-infotip for modded hotels:
+
+ModID: `shared-infotip-fix-tourist-buildings-lion053`
 
 ![Happiness-Infotip](/sources/infotip_tourists.png)
 

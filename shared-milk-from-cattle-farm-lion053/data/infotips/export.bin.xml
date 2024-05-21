@@ -420,7 +420,9 @@
             <ExpectedValueInt>1010263</ExpectedValueInt> <!-- cattle farm ow -->
             <Condition>[RefGuid]</Condition>
           </VisibilityElement>
-          <OperatorType />
+          <OperatorType>
+            <OperatorType>1</OperatorType>
+          </OperatorType>
         </VisibilityElement>
         <OperatorType />
       </VisibilityElement>

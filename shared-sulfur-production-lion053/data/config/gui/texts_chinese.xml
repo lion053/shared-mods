@@ -17,6 +17,11 @@
 			<Text>当这个模块放置在旧世界铁、铜、锌矿采矿场的旁边时，它们会产生额外的硫。需要煤作为输入。&#xA;&#xD;&#xA;&#xD;&lt;font overrideTextColor="true" color='#2d7fb8'&gt;需要&lt;/font&gt;&lt;font overrideTextColor="true" color='#edc891'&gt;每轮(01:30):&lt;/font&gt;&#xD;&#xA;&lt;font overrideTextColor="true" color='#edc891'&gt;1t &lt;img height='24' width='24' src="[AssetData(1010304) Icon]"/&gt; [AssetData(1010226) Text]&lt;/font&gt;</Text>
 		</Text>
 		<Text>
+			<!-- TODO translation -->
+			<GUID>1500302350</GUID>
+			<Text>Iron, and bauxit mines produce sulfur as extra output, when this module is placed next to them. Requires coal as input.&#xA;&#xD;&#xA;&#xD;&lt;font overrideTextColor="true" color='#2d7fb8'&gt;Demand&lt;/font&gt;&lt;font overrideTextColor="true" color='#edc891'&gt; per Cycle (01:30):&lt;/font&gt;&#xD;&#xA;&lt;font overrideTextColor="true" color='#edc891'&gt;1t &lt;img height='24' width='24' src="[AssetData(1010304) Icon]"/&gt; [AssetData(1010226) Text]&lt;/font&gt;</Text>
+		</Text>
+		<Text>
 			<GUID>2100115092</GUID>
 			<Text>矿井模块</Text>
 		</Text>
@@ -27,6 +32,11 @@
 		<Text>
 			<GUID>2100115094</GUID>
 			<Text>铁、铜和锌矿石经过几个小时的焙烧可以得到二氧化硫。</Text>
+		</Text>
+		<Text>
+			<!-- TODO translation -->
+			<GUID>1500302352</GUID>
+			<Text>Sulfur dioxide can be obtained from sulfidic iron and bauxit ores by roasting them for several hours.</Text>
 		</Text>
 		<Text>
 			<GUID>2100115721</GUID>

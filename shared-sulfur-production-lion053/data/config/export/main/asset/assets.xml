@@ -183,6 +183,72 @@
         </Culture>
       </Values>
     </Asset>
+    <Asset>
+      <BaseAssetGUID>2100115090</BaseAssetGUID>
+      <Values>
+        <Standard>
+          <GUID>1500302351</GUID>
+          <Name>Sulfur Module Colony01</Name>
+          <InfoDescription>1500302350</InfoDescription>
+        </Standard>
+        <Text>
+          <TextOverride>2100115090</TextOverride>
+        </Text>
+        <Building>
+          <AssociatedRegions>Colony01</AssociatedRegions>
+        </Building>
+        <Object>
+          <Variations>
+            <Item>
+              <Filename>data\graphics\mod_buildings\sulfur_module_colony01\mining_sulfur_module_01.cfg</Filename>
+            </Item>
+          </Variations>
+        </Object>
+        <Cost>
+          <Costs>
+            <Item>
+              <Ingredient>1010017</Ingredient>
+              <Amount>3500</Amount>
+            </Item>
+            <Item>
+              <Ingredient>1010205</Ingredient>
+              <Amount>10</Amount>
+            </Item>
+            <Item>
+              <Ingredient>1010218</Ingredient>
+              <Amount>15</Amount>
+            </Item>
+            <Item>
+              <Ingredient>1010202</Ingredient>
+              <Amount>15</Amount>
+            </Item>
+          </Costs>
+        </Cost>
+        <Selection>
+          <ParticipantMessageArcheType>SA_Resident_tier02_atWork</ParticipantMessageArcheType>
+        </Selection>
+        <Maintenance>
+          <Maintenances>
+            <Item>
+              <Product>1010017</Product>
+              <Amount>150</Amount>
+              <InactiveAmount>100</InactiveAmount>
+            </Item>
+            <Item>
+              <Product>1010367</Product>
+              <Amount>10</Amount>
+            </Item>
+          </Maintenances>
+        </Maintenance>
+        <BuffFactory>
+          <ProductionBuffs>
+            <Item>
+              <ProductivityBuff>1500302353</ProductivityBuff>
+            </Item>
+          </ProductionBuffs>
+        </BuffFactory>
+      </Values>
+    </Asset>
   </ModOp>
   <!-- Sulfur Module Buff -->
   <ModOp Type="addNextSibling" GUID="135117">
@@ -234,6 +300,30 @@
         <ItemContainerUpgrade />
       </Values>
     </Asset>
+    <Asset>
+      <BaseAssetGUID>2100115093</BaseAssetGUID>
+      <Values>
+        <Standard>
+          <GUID>1500302353</GUID>
+          <Name>Roasting Sulfidic Ore Colony01</Name>
+          <InfoDescription>1500302352</InfoDescription>
+        </Standard>
+        <Text>
+          <TextOverride>2100115093</TextOverride>
+        </Text>
+        <ItemEffect>
+          <EffectTargets>
+            <Item>
+              <GUID>1388</GUID>
+            </Item>
+            <Item>
+              <GUID>1308</GUID>
+            </Item>
+          </EffectTargets>
+          <AllowStacking>0</AllowStacking>
+        </ItemEffect>
+      </Values>
+    </Asset>
   </ModOp>
   <!-- Sulfur output to Gritty Gas Extractor Item -->
   <ModOp Type="add" GUID="116167" Path="/Values/FactoryUpgrade/AdditionalOutput" Condition="!/Values/FactoryUpgrade/AdditionalOutput[Item/Product='2100115089']">
@@ -247,6 +337,9 @@
   <ModOp Type="add" GUID="142313" Path="/Values/FeedbackBuildingGroup/Buildings" Condition="!/Values/FeedbackBuildingGroup/Buildings[Item/Building='2100115090']">
     <Item>
       <Building>2100115090</Building>
+    </Item>
+    <Item>
+      <Building>1500302351</Building>
     </Item>
   </ModOp>
 </Group>

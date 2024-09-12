@@ -14,8 +14,31 @@
   <!-- Compatible with new and existing saves -->
 
   <!-- Adjustments for cattle farm and cattle pasture properties -->
-  <ModOp Type="merge" GUID="1010263" Path="/Values/Maintenance/Maintenances/Item[Product='1010052']">
-    <Amount>25</Amount> <!-- vanilla value = 20 -->
+  <ModOp Type="merge" GUID="1010263" Path="/Values/Maintenance/Maintenances">
+    <Maintenances>
+      <Item>
+        <Product>1010017</Product>
+        <Amount>10</Amount><!-- vanilla value = 50 -->
+        <InactiveAmount>5</InactiveAmount>
+      </Item>
+      <Item>
+        <Product>1010052</Product>
+        <Amount>5</Amount><!-- vanilla value = 20 -->
+      </Item>
+    </Maintenances>
+  </ModOp>
+  <ModOp Type="merge" GUID="101269" Path="/Values/Maintenance/Maintenances">
+    <Maintenances>
+      <Item>
+        <Product>1010017</Product>
+        <Amount>3</Amount><!-- vanilla value = 25 -->
+        <InactiveAmount>1</InactiveAmount>
+      </Item>
+      <Item>
+        <Product>1010366</Product>
+        <Amount>3</Amount><!-- vanilla value = 20 -->
+      </Item>
+    </Maintenances>
   </ModOp>
   <ModOp Type="merge" GUID="1010263" Path="/Values/Object/Variations/Item/Filename">
     <Filename>data\graphics\mod_buildings\lion_053\cattle_farm_ow\cattle_farm_ow.cfg</Filename>
@@ -43,10 +66,13 @@
           <StorageAmount>1</StorageAmount>
         </Item>
       </FactoryOutputs>
-      <CycleTime>120</CycleTime>
+      <CycleTime>180</CycleTime>
       <WarehouseTransporterAsset>0</WarehouseTransporterAsset>
       <ClampedMaxTransporterLogisticCost>0.1</ClampedMaxTransporterLogisticCost>
     </FactoryBase>
+    <BuffFactory>
+      <BaseBuff>2100118204</BaseBuff>
+    </BuffFactory>
     <LogisticNode>
       <TransporterCountMax>0</TransporterCountMax>
       <NeedsTransporterQueue>0</NeedsTransporterQueue>
@@ -76,6 +102,11 @@
       <BoostedByIndustrialization>0</BoostedByIndustrialization>
     </Industrializable>
   </ModOp>
+  <ModOp Type="merge" GUID="101269" Path="/Values">
+    <BuffFactory>
+      <BaseBuff>2100118204</BaseBuff>
+    </BuffFactory>
+  </ModOp>
   <!-- Adjust milk product -->
   <ModOp Type="add" GUID="5385" Path="/Values/Product/AssociatedRegion" Condition="!/Values/Product[AssociatedRegion='Moderate']">;Moderate</ModOp> <!-- valid argument -->
   <ModOp Type="add" GUID="5385" Path="/Values/Product/ProductionRegions" Condition="!/Values/Product/ProductionRegions[Item/RegionType='Moderate']">
@@ -103,6 +134,32 @@
           <AssociatedRegion>Moderate;Colony01</AssociatedRegion>
         </Product>
         <ExpeditionAttribute />
+      </Values>
+    </Asset>
+    <Asset>
+      <Template>GuildhouseBuff</Template>
+      <Values>
+        <Standard>
+          <GUID>2100118204</GUID>
+          <Name>Pasture_Buff</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/icon_general_module_01.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>2100118203</TextOverride>
+        </Text>
+        <BuildingUpgrade>
+          <MaintenanceUpgrade>
+            <Value>1</Value>
+            <Percental>0</Percental>
+          </MaintenanceUpgrade>
+          <WorkforceAmountUpgrade>
+            <Value>1</Value>
+            <Percental>0</Percental>
+          </WorkforceAmountUpgrade>
+        </BuildingUpgrade>
+        <CultureUpgrade>
+          <HideBuff>1</HideBuff>
+        </CultureUpgrade>
       </Values>
     </Asset>
   </ModOp>
